@@ -1,0 +1,1068 @@
+/* =============================
+        CONFIGURACIÓN
+============================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f7f7fb;
+    color:#333;
+}
+
+/* =============================
+            MENÚ
+============================= */
+
+header{
+    width:100%;
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(90,50,120,.12);
+    border-bottom:3px solid #7b2cbf;
+}
+
+nav{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    color:#7b2cbf;
+    font-size:27px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.logo i{
+    color:#d4af37;
+    margin-right:8px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    align-items:center;
+}
+
+nav ul li{
+    margin-left:23px;
+}
+
+nav ul li a{
+    color:#444;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:bold;
+    transition:.3s;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:3px;
+    background:#d4af37;
+    border-radius:10px;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#7b2cbf;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+/* =============================
+            SLIDER
+============================= */
+
+.slider{
+    position:relative;
+    width:100%;
+    height:600px;
+    overflow:hidden;
+}
+
+.slides{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+.slides::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(55,20,80,.55),
+        rgba(55,20,80,.15),
+        rgba(0,0,0,.25)
+    );
+    pointer-events:none;
+}
+
+.slides img{
+    width:100%;
+    height:600px;
+    object-fit:cover;
+    position:absolute;
+    opacity:0;
+    transform:scale(1.04);
+    transition:opacity 1s ease, transform 5s ease;
+}
+
+.slides img.active{
+    opacity:1;
+    transform:scale(1);
+}
+
+.texto-slider{
+    position:absolute;
+    z-index:5;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+    text-align:center;
+    width:min(850px,90%);
+    padding:40px;
+    border-radius:25px;
+    background:rgba(55,20,80,.55);
+    backdrop-filter:blur(5px);
+    border:1px solid rgba(255,255,255,.25);
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.texto-slider h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.texto-slider p{
+    font-size:21px;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+.boton{
+    display:inline-block;
+    background:#d4af37;
+    color:white;
+    padding:15px 35px;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 7px 18px rgba(212,175,55,.35);
+}
+
+.boton:hover{
+    background:#7b2cbf;
+    transform:translateY(-3px);
+}
+
+/* =============================
+          NOSOTROS
+============================= */
+
+.nosotros{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+    padding:80px 0;
+}
+
+.nosotros h2,
+#servicios h2,
+#galeria h2,
+#eventos h2,
+.estadisticas h2,
+#ubicacion h2,
+#contacto h2{
+    color:#7b2cbf;
+}
+
+.nosotros h2{
+    font-size:40px;
+    margin-bottom:25px;
+}
+
+.nosotros p{
+    font-size:19px;
+    line-height:32px;
+    color:#666;
+}
+
+/* línea decorativa */
+
+.nosotros h2::after,
+#servicios h2::after,
+#galeria h2::after,
+#eventos h2::after,
+.estadisticas h2::after,
+#ubicacion h2::after,
+#contacto h2::after{
+    content:"";
+    display:block;
+    width:60px;
+    height:4px;
+    background:#d4af37;
+    margin:14px auto 0;
+    border-radius:10px;
+}
+
+/* =============================
+          SERVICIOS
+============================= */
+
+#servicios{
+    background:white;
+    padding:80px 0;
+}
+
+#servicios h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.contenedor{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+    background:white;
+    padding:40px 28px;
+    min-height:280px;
+    text-align:center;
+    border-radius:22px;
+    border:1px solid #eee;
+    box-shadow:0 8px 25px rgba(70,40,100,.10);
+    transition:.4s ease;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:#7b2cbf;
+    transition:.4s;
+}
+
+.card:nth-child(2)::before{
+    background:#d4af37;
+}
+
+.card:nth-child(3)::before{
+    background:#3984d8;
+}
+
+.card:nth-child(4)::before{
+    background:#2eaf63;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 18px 35px rgba(70,40,100,.18);
+}
+
+.card i{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:80px;
+    height:80px;
+    margin:5px auto 20px;
+    border-radius:50%;
+    background:#f1e8fa;
+    color:#7b2cbf;
+    font-size:38px;
+    transition:.4s;
+}
+
+.card:nth-child(2) i{
+    background:#fff7dc;
+    color:#d4af37;
+}
+
+.card:nth-child(3) i{
+    background:#e7f2ff;
+    color:#3984d8;
+}
+
+.card:nth-child(4) i{
+    background:#e7f8ef;
+    color:#2eaf63;
+}
+
+.card:hover i{
+    transform:rotate(8deg) scale(1.1);
+}
+
+.card h3{
+    font-size:23px;
+    margin-bottom:15px;
+    color:#333;
+}
+
+.card p{
+    line-height:27px;
+    color:#666;
+}
+
+/* =========================
+   GALERÍA 3D
+========================= */
+
+.galeria {
+    text-align: center;
+    padding: 70px 20px;
+    overflow: hidden;
+}
+
+.galeria h2 {
+    color: #7b2cbf;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.galeria p {
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.galeria-3d {
+    width: 100%;
+    max-width: 1100px;
+    height: 450px;
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-3d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    perspective: 1200px;
+}
+
+.foto-3d {
+    position: absolute;
+    width: 270px;
+    height: 360px;
+    left: 50%;
+    top: 50%;
+
+    transform-style: preserve-3d;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.7s ease,
+        opacity 0.7s ease,
+        filter 0.7s ease,
+        z-index 0.7s ease;
+
+    transform-origin: center;
+}
+
+.foto-3d img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================
+   FOTO CENTRAL
+========================= */
+
+.foto-3d.pos0 {
+    transform:
+        translate(-50%, -50%)
+        translateX(0)
+        translateZ(180px)
+        rotateY(0deg)
+        scale(1.08);
+
+    opacity: 1;
+    filter: none;
+    z-index: 10;
+}
+
+
+/* =========================
+   IZQUIERDA
+========================= */
+
+.foto-3d.pos-1 {
+    transform:
+        translate(-50%, -50%)
+        translateX(-260px)
+        translateZ(0)
+        rotateY(28deg)
+        scale(0.82);
+
+    opacity: 0.85;
+    filter: brightness(0.8);
+    z-index: 5;
+}
+
+
+/* =========================
+   DERECHA
+========================= */
+
+.foto-3d.pos1 {
+    transform:
+        translate(-50%, -50%)
+        translateX(260px)
+        translateZ(0)
+        rotateY(-28deg)
+        scale(0.82);
+
+    opacity: 0.85;
+    filter: brightness(0.8);
+    z-index: 5;
+}
+
+
+/* =========================
+   IZQUIERDA LEJANA
+========================= */
+
+.foto-3d.pos-2 {
+    transform:
+        translate(-50%, -50%)
+        translateX(-430px)
+        translateZ(-120px)
+        rotateY(38deg)
+        scale(0.62);
+
+    opacity: 0.4;
+    filter: brightness(0.6) blur(1px);
+    z-index: 2;
+}
+
+
+/* =========================
+   DERECHA LEJANA
+========================= */
+
+.foto-3d.pos2 {
+    transform:
+        translate(-50%, -50%)
+        translateX(430px)
+        translateZ(-120px)
+        rotateY(-38deg)
+        scale(0.62);
+
+    opacity: 0.4;
+    filter: brightness(0.6) blur(1px);
+    z-index: 2;
+}
+
+
+/* Las que quedan fuera */
+
+.foto-3d.oculta {
+    transform:
+        translate(-50%, -50%)
+        translateZ(-300px)
+        scale(0.4);
+
+    opacity: 0;
+    z-index: 0;
+}
+
+
+/* =========================
+   EFECTO AL PASAR EL MOUSE
+========================= */
+
+.foto-3d.pos0:hover {
+    transform:
+        translate(-50%, -50%)
+        translateZ(210px)
+        rotateY(0deg)
+        scale(1.13);
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.boton-galeria {
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+
+    background: #7b2cbf;
+    color: white;
+
+    font-size: 40px;
+    line-height: 40px;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    transition: 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton-galeria:hover {
+    background: #d4af37;
+    color: #7b2cbf;
+
+    transform: scale(1.12);
+}
+
+.boton-galeria.anterior {
+    left: 20px;
+}
+
+.boton-galeria.siguiente {
+    right: 20px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .foto-3d {
+        width: 220px;
+        height: 300px;
+    }
+
+    .foto-3d.pos-1 {
+        transform:
+            translate(-50%, -50%)
+            translateX(-190px)
+            rotateY(25deg)
+            scale(0.78);
+    }
+
+    .foto-3d.pos1 {
+        transform:
+            translate(-50%, -50%)
+            translateX(190px)
+            rotateY(-25deg)
+            scale(0.78);
+    }
+
+    .foto-3d.pos-2,
+    .foto-3d.pos2 {
+        opacity: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .galeria-3d {
+        height: 380px;
+    }
+
+    .foto-3d {
+        width: 210px;
+        height: 290px;
+    }
+
+    .foto-3d.pos-1 {
+        transform:
+            translate(-50%, -50%)
+            translateX(-120px)
+            rotateY(22deg)
+            scale(0.72);
+    }
+
+    .foto-3d.pos1 {
+        transform:
+            translate(-50%, -50%)
+            translateX(120px)
+            rotateY(-22deg)
+            scale(0.72);
+    }
+
+    .boton-galeria {
+        width: 45px;
+        height: 45px;
+        font-size: 30px;
+    }
+
+    .boton-galeria.anterior {
+        left: 5px;
+    }
+
+    .boton-galeria.siguiente {
+        right: 5px;
+    }
+}
+
+/* =============================
+        TABLA EVENTOS
+============================= */
+
+#eventos{
+    padding:80px 0;
+    background:white;
+}
+
+#eventos h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:40px;
+}
+
+table{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    border-collapse:separate;
+    border-spacing:0;
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(70,40,100,.10);
+}
+
+th{
+    background:#7b2cbf;
+    color:white;
+    padding:18px;
+}
+
+td{
+    padding:17px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+tr:nth-child(even){
+    background:#faf7fd;
+}
+
+tr:hover{
+    background:#f3eafa;
+}
+
+td:first-child{
+    color:#7b2cbf;
+    font-weight:bold;
+}
+
+/* =============================
+        ESTADÍSTICAS
+============================= */
+
+.estadisticas{
+    padding:80px 0;
+    background:#f7f7fb;
+}
+
+.estadisticas h2{
+    text-align:center;
+    margin-bottom:35px;
+    font-size:40px;
+}
+
+#grafica{
+    display:block;
+    width:90% !important;
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(70,40,100,.10);
+}
+
+/* =============================
+        UBICACIÓN
+============================= */
+
+#ubicacion{
+    padding:80px 0;
+    background:white;
+}
+
+#ubicacion h2{
+    text-align:center;
+    margin-bottom:35px;
+    font-size:40px;
+}
+
+iframe{
+    width:90%;
+    max-width:1100px;
+    height:400px;
+    display:block;
+    margin:auto;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(70,40,100,.15);
+}
+
+/* =============================
+        CONTACTO
+============================= */
+
+#contacto{
+    padding:80px 0;
+    background:#f7f7fb;
+}
+
+#contacto h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:40px;
+}
+
+form{
+    width:90%;
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:22px;
+    box-shadow:0 10px 30px rgba(70,40,100,.12);
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:20px;
+    border:2px solid #eee;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#7b2cbf;
+    box-shadow:0 0 0 3px rgba(123,44,191,.08);
+}
+
+textarea{
+    height:150px;
+    resize:none;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#d4af37;
+    color:white;
+    border:none;
+    font-size:18px;
+    cursor:pointer;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+button:hover{
+    background:#7b2cbf;
+    transform:translateY(-2px);
+}
+
+/* =============================
+            FOOTER
+============================= */
+
+footer{
+    background:#2f1742;
+    color:white;
+    text-align:center;
+    padding:45px;
+}
+
+footer h3{
+    color:#d4af37;
+    margin-bottom:20px;
+    font-size:25px;
+}
+
+footer p{
+    margin:8px 0;
+    color:#eee;
+}
+
+/* =============================
+        RESPONSIVE
+============================= */
+
+@media(max-width:1000px){
+
+    .contenedor{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    nav ul li{
+        margin-left:12px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+    }
+
+    nav ul{
+        flex-direction:column;
+        text-align:center;
+        margin-top:15px;
+    }
+
+    nav ul li{
+        margin:8px 0;
+    }
+
+    .slider{
+        height:400px;
+    }
+
+    .slides img{
+        height:400px;
+    }
+
+    .texto-slider{
+        width:90%;
+        padding:25px;
+    }
+
+    .texto-slider h1{
+        font-size:30px;
+    }
+
+    .texto-slider p{
+        font-size:17px;
+    }
+
+    .contenedor{
+        grid-template-columns:1fr;
+    }
+
+    .galeria img{
+        flex:0 0 270px;
+        width:270px;
+        height:175px;
+    }
+
+    .nosotros h2,
+    #servicios h2,
+    #galeria h2,
+    #eventos h2,
+    .estadisticas h2,
+    #ubicacion h2,
+    #contacto h2{
+        font-size:30px;
+    }
+
+    table{
+        width:95%;
+        font-size:14px;
+    }
+
+    th,
+    td{
+        padding:10px 5px;
+    }
+
+    form{
+        padding:25px;
+    }
+
+}
+
+/*================================
+      FONDO ANIMADO SUTIL
+================================*/
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Capa de partículas */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+    z-index: -1;
+
+    background-image:
+        radial-gradient(circle, rgba(55, 41, 243, 0.692) 2px, transparent 3px),
+        radial-gradient(circle, rgba(248, 236, 64, 0.404) 1.5px, transparent 2.5px),
+        radial-gradient(circle, rgba(100, 100, 100, 0.10) 2px, transparent 3px);
+
+    background-size:
+        180px 180px,
+        240px 240px,
+        320px 320px;
+
+    background-position:
+        0 0,
+        60px 100px,
+        120px 40px;
+
+    animation: moverFondo 25s linear infinite;
+}
+
+
+/* Movimiento muy suave */
+
+@keyframes moverFondo {
+
+    0% {
+        background-position:
+            0 0,
+            60px 100px,
+            120px 40px;
+    }
+
+    50% {
+        background-position:
+            40px 60px,
+            20px 150px,
+            180px 10px;
+    }
+
+    100% {
+        background-position:
+            0 120px,
+            80px 40px,
+            100px 160px;
+    }
+}
+
+/*================================
+      FONDO DE PARTÍCULAS
+================================*/
+
+#particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    overflow: hidden;
+}
+
+
+/* Cada puntito */
+
+.particula {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: rgba(187, 73, 240, 0.986);
+
+    border-radius: 50%;
+
+    animation: flotar 12s linear infinite;
+
+    box-shadow: 0 0 8px rgba(120, 120, 120, 0.08);
+}
+
+
+/* Movimiento */
+
+@keyframes flotar {
+
+    0% {
+        transform: translateY(110vh) translateX(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    
+
+    50% {
+        transform: translateY(50vh) translateX(35px);
+        opacity: 0.5;
+    }
+
+    85% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-10vh) translateX(-30px);
+        opacity: 0;
+    }
+}
+
+
+/* El contenido queda por encima */
+
+.contenedor,
+footer {
+    position: relative;
+    z-index: 1;
+}
