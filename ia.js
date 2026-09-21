@@ -112,7 +112,7 @@ async function enviarPregunta() {
 
     try {
 
-        const respuesta = await fetch("http://127.0.0.1:5000/preguntar", {
+        const respuesta = await fetch("https://velvet-ia.onrender.com/preguntar", {
 
             method: "POST",
 
