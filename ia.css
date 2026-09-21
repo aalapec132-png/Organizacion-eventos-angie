@@ -1,0 +1,397 @@
+/* ======================================
+   VELVET IA
+====================================== */
+
+.ia-boton {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 16px;
+
+    background: white;
+    border-radius: 50px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    transition: 0.3s;
+}
+
+.ia-boton:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+.ia-boton img {
+    width: 42px;
+    height: 42px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+
+.ia-boton span {
+    font-weight: 600;
+    color: #6b3fa0;
+}
+
+
+/* ======================================
+   VENTANA DEL CHAT
+====================================== */
+
+.ia-chat {
+    position: fixed;
+
+    right: 25px;
+    bottom: 85px;
+
+    width: 360px;
+    max-width: calc(100vw - 30px);
+
+    height: 520px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(20px) scale(0.95);
+
+    transition: 0.3s;
+
+    z-index: 9998;
+}
+
+
+.ia-chat.abierto {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0) scale(1);
+}
+
+
+/* ======================================
+   ENCABEZADO
+====================================== */
+
+.ia-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 18px;
+
+    background: linear-gradient(
+        135deg,
+        #8e5bb7,
+        #c58bdd
+    );
+
+    color: white;
+}
+
+
+.ia-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.ia-icono {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.ia-icono img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.ia-titulo h3 {
+    margin: 0;
+
+    font-size: 17px;
+}
+
+
+.ia-titulo span {
+    font-size: 12px;
+
+    opacity: 0.85;
+}
+
+
+.ia-header button {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    color: white;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: 0.2s;
+}
+
+
+.ia-header button:hover {
+    background: rgba(255, 255, 255, 0.35);
+
+    transform: rotate(90deg);
+}
+
+
+/* ======================================
+   MENSAJES
+====================================== */
+
+.ia-mensajes {
+    flex: 1;
+
+    padding: 18px;
+
+    overflow-y: auto;
+
+    background: #faf8fc;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.ia-mensaje {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 8px;
+
+    max-width: 90%;
+}
+
+
+.ia-avatar {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: white;
+}
+
+
+.ia-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.ia-burbuja {
+    padding: 10px 13px;
+
+    border-radius: 15px 15px 15px 4px;
+
+    background: white;
+
+    color: #333;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ======================================
+   MENSAJE DEL USUARIO
+====================================== */
+
+.ia-mensaje.usuario {
+    margin-left: auto;
+
+    justify-content: flex-end;
+}
+
+
+.ia-mensaje.usuario .ia-burbuja {
+    background: #8e5bb7;
+
+    color: white;
+
+    border-radius: 15px 15px 4px 15px;
+}
+
+
+/* ======================================
+   ESCRIBIR
+====================================== */
+
+.ia-escribir {
+    display: flex;
+
+    gap: 8px;
+
+    padding: 12px;
+
+    background: white;
+
+    border-top: 1px solid #eee;
+}
+
+
+.ia-escribir input {
+    flex: 1;
+
+    border: 1px solid #ddd;
+
+    outline: none;
+
+    border-radius: 25px;
+
+    padding: 11px 15px;
+
+    font-size: 14px;
+}
+
+
+.ia-escribir input:focus {
+    border-color: #9c6bc5;
+}
+
+
+.ia-escribir button {
+    width: 43px;
+    height: 43px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #8e5bb7;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.ia-escribir button:hover {
+    transform: scale(1.08);
+
+    background: #74489c;
+}
+
+
+/* ======================================
+   CELULAR
+====================================== */
+
+@media (max-width: 500px) {
+
+    .ia-boton {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .ia-boton span {
+        display: none;
+    }
+
+    .ia-chat {
+        right: 15px;
+        bottom: 75px;
+
+        width: calc(100vw - 30px);
+
+        height: 70vh;
+    }
+}
+/* ======================================
+   TAMAÑO DE IMÁGENES DE VELVET IA
+====================================== */
+
+.ia-boton img,
+.ia-icono img,
+.ia-avatar img {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    max-width: 42px !important;
+    max-height: 42px !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+
+    position: static !important;
+
+    margin: 0 !important;
+
+    border-radius: 50% !important;
+}
+.ia-avatar img {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+    max-width: 30px !important;
+    max-height: 30px !important;
+}

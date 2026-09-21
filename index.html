@@ -25,11 +25,83 @@
     </div>
 
 
-</body>
-
-
 
 <header>
+
+    <!-- ======================================
+        VELVET IA
+====================================== -->
+
+<div class="ia-boton" id="abrirIA">
+    <img src="ia.png" alt="Velvet IA">
+    <span>Velvet IA</span>
+</div>
+
+
+<div class="ia-chat" id="iaChat">
+
+    <!-- ENCABEZADO -->
+
+    <div class="ia-header">
+
+        <div class="ia-titulo">
+
+            <div class="ia-icono">
+                <img src="ia.png" alt="Velvet IA">
+            </div>
+
+            <div>
+                <h3>Velvet IA</h3>
+                <span>Asistente virtual</span>
+            </div>
+
+        </div>
+
+        <button id="cerrarIA" aria-label="Cerrar Velvet IA">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <!-- MENSAJES -->
+
+    <div class="ia-mensajes" id="iaMensajes">
+
+        <div class="ia-mensaje bot">
+
+            <div class="ia-avatar">
+                <img src="ia.png" alt="Velvet IA">
+            </div>
+
+            <div class="ia-burbuja">
+                ¡Hola! 💜 Soy Velvet IA.
+                Pregúntame lo que quieras sobre Velvet Studio.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ESCRIBIR -->
+
+    <div class="ia-escribir">
+
+        <input
+            type="text"
+            id="iaInput"
+            placeholder="Escribe tu pregunta..."
+            autocomplete="off"
+        >
+
+        <button id="iaEnviar" aria-label="Enviar mensaje">
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
+
+    </div>
+
+</div>
 
 <nav>
 
@@ -399,7 +471,7 @@ Enviar Solicitud
 </footer>
 
 <script src="eventos.js"></script>
-
+<script src="ia.js"></script>
 
 </body>
 </html>
