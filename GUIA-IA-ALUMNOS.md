@@ -11,6 +11,47 @@ En esta guía vamos a configurar Velvet IA con una API key de Google Gemini. La 
 
 > La clave es personal y no la vamos a compartir. Si se publica por accidente, la revocamos y creamos otra.
 
+## ¿Dónde se coloca la API key?
+
+La API key se configura como una variable de entorno en la terminal que vamos a utilizar para iniciar Flask. La escribimos **antes** de ejecutar `py app.py`.
+
+No la colocamos en:
+
+- `ia.js`.
+- `app.py`.
+- `index.html`.
+- GitHub.
+
+La clave solo se mantiene activa en la terminal actual. Si cerramos esa terminal, tendremos que configurarla nuevamente.
+
+Usamos el comando correspondiente a nuestra terminal:
+
+### PowerShell
+
+```powershell
+$env:GEMINI_API_KEY="TU_API_KEY"
+```
+
+### Git Bash
+
+```bash
+export GEMINI_API_KEY="TU_API_KEY"
+```
+
+### CMD
+
+```bat
+set GEMINI_API_KEY=TU_API_KEY
+```
+
+Después de configurar la clave, iniciamos Flask:
+
+```text
+py app.py
+```
+
+Si aparece un error relacionado con `GEMINI_API_KEY`, revisamos que la clave se haya configurado en la misma terminal donde ejecutamos Flask.
+
 ## 2. Preparar el backend
 
 Desde la carpeta del proyecto, vamos a preparar el backend:
