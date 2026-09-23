@@ -13,7 +13,13 @@ En esta guía vamos a configurar Velvet IA con una API key de Google Gemini. La 
 
 ## ¿Dónde se coloca la API key?
 
-La API key se configura como una variable de entorno en la terminal que vamos a utilizar para iniciar Flask. La escribimos **antes** de ejecutar `py app.py`.
+La API key se coloca en el archivo:
+
+```text
+backend/.env
+```
+
+El proyecto ya está preparado para leer ese archivo mediante `load_dotenv()` en `backend/app.py`.
 
 No la colocamos en:
 
@@ -22,35 +28,50 @@ No la colocamos en:
 - `index.html`.
 - GitHub.
 
-La clave solo se mantiene activa en la terminal actual. Si cerramos esa terminal, tendremos que configurarla nuevamente.
+### Crear el archivo `.env`
 
-Usamos el comando correspondiente a nuestra terminal:
+Primero entramos a la carpeta `backend` y copiamos el archivo de ejemplo.
 
-### PowerShell
+PowerShell:
 
 ```powershell
-$env:GEMINI_API_KEY="TU_API_KEY"
+cd backend
+Copy-Item .env.example .env
 ```
 
-### Git Bash
+Git Bash:
 
 ```bash
-export GEMINI_API_KEY="TU_API_KEY"
+cd backend
+cp .env.example .env
 ```
 
-### CMD
+CMD:
 
 ```bat
-set GEMINI_API_KEY=TU_API_KEY
+cd backend
+copy .env.example .env
 ```
 
-Después de configurar la clave, iniciamos Flask:
+Después abrimos `backend/.env` con el Bloc de notas y reemplazamos:
+
+```text
+GEMINI_API_KEY=TU_API_KEY
+```
+
+por nuestra clave real:
+
+```text
+GEMINI_API_KEY=LA_CLAVE_REAL
+```
+
+Guardamos el archivo y luego iniciamos Flask:
 
 ```text
 py app.py
 ```
 
-Si aparece un error relacionado con `GEMINI_API_KEY`, revisamos que la clave se haya configurado en la misma terminal donde ejecutamos Flask.
+Si aparece un error relacionado con `GEMINI_API_KEY`, revisamos que exista `backend/.env`, que la variable esté escrita correctamente y que no tenga espacios alrededor del signo `=`.
 
 ## 2. Preparar el backend
 
@@ -63,7 +84,6 @@ cd backend
 py -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-$env:GEMINI_API_KEY="TU_API_KEY"
 py app.py
 ```
 
@@ -74,7 +94,6 @@ cd backend
 py -m venv .venv
 source .venv/Scripts/activate
 pip install -r requirements.txt
-export GEMINI_API_KEY="TU_API_KEY"
 py app.py
 ```
 
@@ -85,7 +104,6 @@ cd backend
 py -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
-set GEMINI_API_KEY=TU_API_KEY
 py app.py
 ```
 
@@ -172,7 +190,8 @@ POST /preguntar
 ## Lista de comprobación
 
 - [ ] Instalamos las dependencias de Flask.
-- [ ] Configuramos `GEMINI_API_KEY` en la terminal.
+- [ ] Creamos `backend/.env` a partir de `.env.example`.
+- [ ] Colocamos `GEMINI_API_KEY` dentro de `backend/.env`.
 - [ ] Confirmamos que `http://localhost:5000/salud` responde correctamente.
 - [ ] Abrimos el frontend mediante un servidor HTTP.
 - [ ] Confirmamos que la pregunta llega a `POST /preguntar`.
