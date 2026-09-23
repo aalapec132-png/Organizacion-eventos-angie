@@ -59,6 +59,14 @@ def inicio():
     return "Velvet IA está funcionando 💜"
 
 
+@app.route("/salud", methods=["GET"])
+def salud():
+    return jsonify({
+        "ok": True,
+        "mensaje": "Servidor funcionando"
+    })
+
+
 @app.route("/preguntar", methods=["POST"])
 def preguntar():
 
